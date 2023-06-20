@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(libthatcord VERSION 0.1.0 LANGUAGES C CXX)
+project(LibThatCord VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -22,37 +22,37 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 # Main Test
 add_executable(
-    libthatcord_test
-    libthatcord/libthatcord_test.cpp
+    LibThatCord_Test
+    LibThatCord/LibThatCord_Test.cpp
 )
 
 target_link_libraries(
-    libthatcord_test
+    LibThatCord_Test
     gtest_main
 )
 
 # Utilty Test
 add_executable(
-    request_test
-    libthatcord/utility/HTTPRequest.cpp
-    libthatcord/utility/HTTPRequest_Test.cpp
+    Request_Test
+    LibThatCord/utility/HTTPRequest.cpp
+    LibThatCord/utility/HTTPRequest_Test.cpp
 )
 target_link_libraries(
-    request_test
+    Request_Test
     ${Boost_BEAST_LIBRARY}
     gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(
-    libthatcord_test
+    LibThatCord_Test
 )
 gtest_discover_tests(
-    request_test
+    Request_Test
 )
 
 add_library(
-    libthatcord
-    libthatcord/libthatcord.cpp
+    LibThatCord
+    LibThatCord/LibThatCord.cpp
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
