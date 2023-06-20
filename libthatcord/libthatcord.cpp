@@ -1,5 +1,5 @@
-#include <iostream>
+#include "libthatcord.hpp"
 
-void say_hello(){
-    std::cout << "Hello, from lib-dis!\n";
+std::string ThatCord::GetGatewayURL()
+{
 }

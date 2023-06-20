@@ -1,4 +1,4 @@
-#include "./libthatcord.hpp"
+#include "libthatcord.hpp"
 
 #include <gtest/gtest.h>
 
